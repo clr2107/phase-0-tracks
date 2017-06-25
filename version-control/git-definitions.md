@@ -1,4 +1,5 @@
 # Git Definitions
+By: catherine rice
 
 **Instructions: ** Define each of the following Git concepts.
 
