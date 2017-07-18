@@ -1,0 +1,34 @@
+4.2 Algorithms
+
+1. Using an Elevator Algorithm
+*This algorithm assumes there are 10 floor buttons, starting with floor 1/Lobby, arranged into 2 columns:
+
+9	10
+7	8
+5	6
+3	4
+1/L	2
+
+-Walk inside the elevator.
+-Click the button of the floor you are going to.
+	-For example, if you are going to floor 3, since that floor number is odd, it will be on the left hand column of buttons. When counting, assuming you are on the lobby, add 1 to the current floor (1) until reaching desired floor (3). Every addition that is even, move one space to the right, or over one column. For every addition that is odd, go to the next row but start at the left hand column. 
+	-Or an easier method: add 1 to current floor (floor 1/lobby) until you reach current floor (3). For every addition that is even, move right 1 space, or over 1 column to the right. For every addition that is odd, move up 1 row, and left 1 space, or over 1 column to the left.
+	[Or using a loop and indexing, if you start on floor 4 and are going to floor 7: 
+floor = 4
+until floor = 7
+floor +=1
+
+position = index (starting with 0) until index = floor - 1
+-Get off the elevator.
+
+2. Making a Tuna Melt Algorithm
+-Open 1 can of tuna using a can opener.
+	-Insert the can opener in the can and rotate around the entire circumference of the can until it is open.
+-Put the tuna into a bowl. 
+	-With a fork, cut the big chunks of tuna into smaller chunks so it is uniform.
+-Add 1 tablespoon of mayonnaise to the bowl.
+-With the fork, mix tuna and mayonnaise until homogenous in consistency.
+-Put tuna onto a piece of bread. Spread evenly by spreading tuna to all four corners and edges of the bread (could be a similar method to the mopping? Back and forth in a straight line).
+-Put 1 slice of American cheese on top of tuna.
+-Microwave or toast the bread, tuna and cheese for 1 minute on power level high.
+-Enjoy.
