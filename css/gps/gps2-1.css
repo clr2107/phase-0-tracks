@@ -1,3 +1,61 @@
-p {
-  color: blue;
+body {
+  background-image: url("https://git-scm.com/images/about/index1@2x.png");
+  background-size: cover;
+}
+h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+
+header, footer {
+  font-family: Georgia;
+background-color: white;
+}
+
+.column-1 {
+  background-color: LightBlue;
+}
+
+.column-2 {
+  background-color: Pink;
+}
+
+section {
+  display: inline-block;
+  float: left;
+  position: relative;
+  top: 150px;
+  max-width: 30%;
+  height: 100vh;
+  overflow: scroll;
+  display: inline-block;
+  border: 2px solid black;
+  font-family: Georgia;
+  margin: 20px;
+
+}
+
+details {
+  padding-left: 10px;
+}
+
+ header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+
+
+}
+footer {
+  display: inline-block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  float: left;
+
+}
+section {
+  padding-left: 10px;
 }
