@@ -53,33 +53,33 @@ def vampire_survey()
     sunshine_allergy = true
   else 
     sunshine_allergy = false
-  until allergies == "Done"
-    allergies = gets.chomp
+      until allergies == "Done"
+      allergies = gets.chomp
     end
   end
 
 # Detection Logic
 vampire_result = "Results inconclusive."
   #If age is correct, employee wants garlic or health insurance, probably not a vampire.
-    if age_is_correct && (employee_likes_garlic || wants_insurance) && !has_vampire_name && !sunshine_allergy
+  if age_is_correct && (employee_likes_garlic || wants_insurance) && !has_vampire_name && !sunshine_allergy
      vampire_result = "Probably not a vampire."
-     end
+  end
   #If age is wrong and hates garlic or waives insurance, probably a vampire.
-    if !age_is_correct && (!employee_likes_garlic || !wants_insurance) && !has_vampire_name && !sunshine_allergy
+  if !age_is_correct && (!employee_likes_garlic || !wants_insurance) && !has_vampire_name && !sunshine_allergy
      vampire_result = "Probably a vampire."
-     end
-    if !age_is_correct && (!employee_likes_garlic && !wants_insurance) && !has_vampire_name && !sunshine_allergy
-   #If the employee got their age wrong, hates garlic bread, and doesn’t want insurance, the result is “Almost certainly a vampire.”
+  end
+  #If the employee got their age wrong, hates garlic bread, and doesn’t want insurance, the result is “Almost certainly a vampire.”
+  if !age_is_correct && (!employee_likes_garlic && !wants_insurance) && !has_vampire_name && !sunshine_allergy
      vampire_result = "Almost certainly a vampire."
-     end
+  end
   #Even if the employee is an amazing liar otherwise, anyone going by the name of “Drake Cula” or “Tu Fang” is clearly a vampire, because come on. In that case, you should print “Definitely a vampire.”
-    if has_vampire_name
+  if has_vampire_name
      vampire_result = "Definitely a vampire."
-     end
+  end
   #If the employee has a sunshine allergy, probably a vampire.
-    if sunshine_allergy 
-      vampire_result = "Probably a vampire."
-    end 
+  if sunshine_allergy 
+    vampire_result = "Probably a vampire."
+  end 
   
 puts vampire_result 
 end
