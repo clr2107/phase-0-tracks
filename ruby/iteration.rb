@@ -15,7 +15,7 @@ p new_array
 #HASHES
 new_hash = {
 "date" => "7/24/17",
-"day" => "Monday", 
+"day" => "Monday",
 "month" => "July"
 }
 new_hash.each {|x| puts x}
@@ -49,11 +49,11 @@ p index_hash[key_array[0]]
 
 #DROP_WHILE
 arr = [1,2,3,4,5]
-p arr.drop_while { |x| x < 3 }
+p arr.drop_while { |x| x < 3}
 
-#REJECT 
-hash = {"a" => 100, "b" => 200, "c" => 300 }
-p hash.reject {|k,v| k < "b" }
+#REJECT
+hash = {"a" => 100, "b" => 200, "c" => 300}
+p hash.reject {|k,v| k < "b"}
 
 
 
