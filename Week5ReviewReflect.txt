@@ -1,0 +1,47 @@
+Week 5 Review and Reflect
+
+Data Structures 
+1. Why are data structures using in programming?
+Data structures are useful in programming because they are a good way to organize data into groups. It is then easier to access data and isolate pieces of information. Data structures are a way to group and organize data, sometimes by theme.
+
+Arrays
+2. Define “array” and describe the characteristics of an array.
+An array is an ordered, integer-indexed collection of any object, including strings, integers and booleans. Array indexing starts at 0, and an index of -1 indicates the last element in the array, and -2 is the second to last element in the array.
+3. Give two original examples of data sets than an array might be well-suited for.
+An array might be well-suited for a list, in general. Specifically, an array called “Ivy League Colleges” might be : [“Harvard”, “MIT”, “Yale”, “Columbia”], or an array called “Ben and Jerry’s ice cream flavors” might be: [“Chocolate Therapy”, “Chocolate Fudge Brownie”, or “Phish Food”].
+
+Hashes
+4. Define “hash” and describe the characteristics of a hash.
+A hash is a type of data structure which can be used to store and organize information, and is more comprehensive than an array. Specifically it is a collection of key-value pairs (i.e. “ice cream” => “chocolate”). Indexing is not an integer index as in arrays but rather through arbitrary keys of any object type.
+5. Give two original examples of data sets that a hash might be well-suited for.
+birthdays = {
+“Mom” => November 17,
+“Dad” => July 1,
+“Brother” => April 13
+}
+
+favorite_cafes = {
+“Starbucks” => ‘14th Street’,
+“Think Coffee” => ‘Houston Street’,
+“The Bean” => ‘Union Square’
+} 
+
+Iteration
+6. Why is iteration useful?
+To iterate means to do the same thing many types, and iterators is a method in Ruby that does the same thing many times. Iteration can be useful for checking each element of an object such as a string or an array. You can also use iteration to set up a set of instructions or methods that are repeated in a sequence a set number of times or until a condition is met. It is useful for searching through objects and elements for something in particular or for manipulating data.
+7. Give an example of a real-life task that would require iteration if you wrote an algorithm for it.
+If you want to encrypt something, such as for making a password, that would involve iterating through each element of the string (each letter/character) and doing some action to it, maybe changing it to the next letter of the alphabet. This would require iteration because it is a repetitive task that is being performed on each element.
+Blocks
+8. What is a block?
+A block is portable code that makes up its own little mini-program, similar to a method. It can be detached from code surrounding it and moved around a program. You can run a block repeatedly similar to a method. Block syntax:
+{|x| puts x}
+do |x|
+	puts x
+end
+*Blocks do not have names and you don’t define them ahead of time as you do with methods. Blocks take parameters in pipes instead of parentheses; blocks are either wrapped in curly braces or with do and end keywords (for short or long blocks, respectively).
+9. What is a block parameter, and where does its value come from?
+A block parameter is when a block is passed to a method as an argument. Ex:
+<random_method> { |x| <some code to run>}
+3.times {|x| puts x}
+will print 0, 1, 2 and return 3.
+“x” is just an arbitrary symbol for the parameters being passed into the block, starting from 0 and going to -1. It is built into the .times method.
