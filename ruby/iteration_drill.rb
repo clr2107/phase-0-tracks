@@ -6,17 +6,36 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # 1. Iterate through the zombie_apocalypse_supplies array using #each,
 # printing each item in the array separated by an asterisk
 # ----
-
+zombie_apocalypse_supplies.each do |x|
+  print x + "*"
+end
 # 2. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies using #each.
 # For instance: are boots in your list of supplies?
 # ----
-
+def supplies(string)
+  zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars", "shotgun", "compass", "CB radio", "batteries"]
+  zombie_apocalypse_supplies.each do |x|
+      if x == string
+          return TRUE
+      else
+          return FALSE
+      end
+      end
+end
 # 3. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5, using #each.
 # ----
-
+zombie_apocalypse_supplies.each do |x|
+  if x.length > 5
+    zombie_apocalypse_supplies.delete(x)
+  end
+  if x == "water jug"
+    zombie_apocalypse_supplies.push(x)
+  end
+end
+p zombie_apocalypse_supplies
 # 4. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
 # and their supplies below. You should get rid of any duplicate items.
@@ -25,7 +44,8 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
 # ----
-
+all_supplies = zombie_apocalypse_supplies + other_survivor_supplies
+all_supplies.uniq
 # Hash Drills
 
 extinct_animals = {
@@ -41,16 +61,23 @@ extinct_animals = {
 # 1. Iterate through extinct_animals hash using #each, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
 # ----
-
+extinct_animals.each do |key, value|
+  value = value.to_s
+  print key + "-" + value + "*"
+end
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000, using #each.
 # ----
-
+extinct_animals.each do |key, value|
+  extinct_animals.keep_if {value<2000}
+  value = value.to_s
+  print key + "-" + value + "*"
+end
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # using #each, so they accurately reflect what year the animal went extinct.
 # ----
-
+extinct_animals.update(extinct_animals){|key, value| (value-3)}
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Build a method  using #each that checks if an animal is in the hash and returns true/false.
 # Call the method in your driver code with each of the following animals to check if

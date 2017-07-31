@@ -8,6 +8,9 @@ while idx < string.length
 	if string[idx] == "z"
 		string[idx] = "a"
 		new_string << string[idx]
+  elsif string[idx] == " "
+    string[idx] == " "
+    new_string << string[idx]
 end
 	idx+=1
 end
@@ -17,7 +20,7 @@ end
 #encrypt("abc")
 #encrypt("zed")
 
-#Decrypt 
+#Decrypt
 #For each letter in the string, go back in the alphabet one letter (subtract one to the index).
 def decrypt(string)
   idx = 0
@@ -37,7 +40,7 @@ end
 #This nested method works because first the string is being encrypted, and then it is being decrypted.
 #If something was decrypted before being encrypted, it would defeat the purpose of encryption and be meaningless.
 
-#DRIVER CODE 
+#DRIVER CODE
 #Asks user if they would like to encrypt or decrypt a password, stores this as input.
 #Include error message if input is outside scope of the question.
 #Asks user for password (string) and runs encrypt/decrypt methods according to the user's selection.
