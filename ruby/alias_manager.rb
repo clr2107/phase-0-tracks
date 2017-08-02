@@ -1,5 +1,3 @@
-
-
 #vowel function
 def next_vowel(letter)
     vowels = ["a", "e", "i", "o", "u"]
@@ -21,15 +19,7 @@ def next_consonant(letter)
     return consonants[next_consonant_index]
 end
 
-
-#swap order of first and last names and print name
-def swap_name(new_name)
-p new_name =  new_name.split(" ")
-p new_name[0], new_name[1] = new_name[1], new_name[0]
-p new_name[0].capitalize + " " + new_name[1].capitalize
-end
-
-#convert to next vowel/consonant function
+#convert name to next vowel/consonant function
 def alias_manager(name)
 vowels = ["a", "e", "i", "o", "u"]
 consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
@@ -46,15 +36,27 @@ new_name = ""
      new_name << " "
     end
   end
-  final_name = swap_name(new_name)
+  swap_name(new_name, name)
 end
 
+#swap order of first and last names; save and print all aliases.
+def swap_name(new_name, name)
+  name = name.join("").capitalize
+all_names = []
+new_name =  new_name.split(" ")
+new_name[0], new_name[1] = new_name[1], new_name[0]
+puts final_name = new_name[0].capitalize + " " + new_name[1].capitalize
+all_names << final_name
+all_names.each do |x|
+  puts "#{name} is actually #{final_name}."
+end
+end
 
-# #user input
-# puts "What is your name? Type done when finished."
-# name = gets.chomp
-# until name == "done"
-# alias_manager(name)
-# name = gets.chomp
-# end
+#ask for user input
+puts "Enter your name. After all names have been entered, type done."
+name = gets.chomp
+until name == "done"
+alias_manager(name)
+name = gets.chomp
+end
 
