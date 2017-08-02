@@ -53,7 +53,7 @@ end
 end
 
 #ask for user input
-puts "Enter your name. After all names have been entered, type done."
+puts "Enter your name for an alias. After all names have been entered, type done."
 name = gets.chomp
 until name == "done"
 alias_manager(name)
