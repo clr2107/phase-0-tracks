@@ -23,7 +23,11 @@ def next_consonant(letter)
 end
 
 #Swap order of first and last name (to be invoked in alias_manager method.)
-
+def swap_name(new_name)
+new_name = new_name.split(" ")
+new_name[0], new_name[1] = new_name[1].capitalize, new_name[0].capitalize
+new_name = new_name.join(" ")
+end
 
 #Main method: Convert name to alias. Using .each, check if each letter in name (user input) is a vowel or a consonant (using .include? method), invoke next_vowel or next_consonant depending on letter is a vowel or consonant, and save new letters in a variable "new_name". Account for spaces in name with " ". Invoke swap_name method at the end to swap order of first and last name and return the result.
 def alias_manager(name)
