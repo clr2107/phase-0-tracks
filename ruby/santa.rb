@@ -1,16 +1,15 @@
-#Create class Santa.
 class Santa
   attr_reader :ethnicity
   attr_accessor :gender, :age
-#Speak method.
+  #Speak method.
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
   end
-#Eat milk & cookies method.
+  #Eat milk & cookies method.
   def eat_milk_and_cookies(cookie)
     puts "That was a good " + cookie + " cookie!"
   end
-# #Initialize method.
+  #Initialize method.
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
     @gender = gender
@@ -27,8 +26,8 @@ class Santa
     @reindeer_ranking.delete(reindeer_name)
     @reindeer_ranking.push(reindeer_name)
   end
-
 end
+
 #Initialize new instance of Santa class.
 # Santa_One = Santa.new("female", "white")
 # Santa_One.speak
@@ -37,6 +36,7 @@ end
 # Santa_One.get_mad_at("Vixen")
 # Santa_One.gender=("gender fluid")
 # p Santa_One
+
 santas = []
 possible_genders = ["agender", "female", "male", "bigender", "gender fluid"]
 possible_ethnicities = ["white", "black", "Latino", "Japanese", "unicorn"]
@@ -44,7 +44,7 @@ possible_ethnicities = ["white", "black", "Latino", "Japanese", "unicorn"]
   santa = Santa.new(possible_genders[rand(possible_genders.length)], possible_ethnicities[rand(possible_ethnicities.length)])
   santa.age = rand(140)
   santas << santa
-  end
+end
 p santas
 
 
