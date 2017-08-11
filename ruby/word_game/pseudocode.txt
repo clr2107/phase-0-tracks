@@ -1,0 +1,14 @@
+#One user will enter a word and the other user attempts to guess the word.
+#Use gets.chomp to get user input of a letter. 
+
+#Guesses are limited, and the number of guesses available is related to the length of the word.
+#Number of guesses equals length of word times 2.
+#Add counter for every guess. If counter == word.length * 2, the loser lost.
+
+#Repeated guesses do not count against the user.
+
+#The word in its current state is printed after every guess. (i.e. if the word is “unicorn” the word will be “_ _ _ _ _ _ _”, after the guess of “c” would be “_ _ _ c _ _ _ “
+#Word at the beginning should be an empty array []. 
+#The user should get a congratulatory message if they win, and a taunting message if they lose.
+#If word.include?(letter), puts “Congratulations! You guessed a correct word.” Then print current state of word.
+#Else, puts “Sorry, guess again!” And print current state of word.
