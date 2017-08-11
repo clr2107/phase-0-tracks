@@ -1,3 +1,4 @@
+
 //Write a function that takes a string as a parameter and reverses the string.
 //Take the last letter of string and make it the first letter of new string. Take the second to last letter of string and make it the second letter of new string, etc. Add/concatenate the letters together and print to the console.
 
