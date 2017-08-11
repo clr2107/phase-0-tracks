@@ -26,9 +26,10 @@ class Santa
     @reindeer_ranking.delete(reindeer_name)
     @reindeer_ranking.push(reindeer_name)
   end
+
 end
 
-#Initialize new instance of Santa class.
+# Initialize new instance of Santa class.
 # Santa_One = Santa.new("female", "white")
 # Santa_One.speak
 # Santa_One.eat_milk_and_cookies("chocolate")
