@@ -1,40 +1,45 @@
+#The calculate method performs specific calculation based on user input.
 def calculate(integer_one, operator_string, integer_two)
-  integer_one.send(operator_string, integer_two)
+  if operator_string == "+"
+    answer = integer_one + integer_two
+  elsif operator_string == "-"
+    answer = integer_one - integer_two
+  elsif operator_string == "*"
+    answer = integer_one * integer_two
+  elsif operator_string == "/"
+    answer = integer_one / integer_two
+  end
+  puts answer
+  return answer
 end
-#calculate(4, "+", 5)
-#calculate(5, "-", 1)
-#calculate(5, "*", 4)
-#calculate(20, "/", 5)
+# calculate(4, "+", 5)
+# calculate(5, "-", 4)
+# calculate(4, "*", 5)
+# calculate(20, "/", 5)
 
-def calculate_user_input(input)
-  integer_one = input[0].to_i
-  operator_string = input[1]
-  integer_two = input[-1].to_i
-  return calculate(integer_one, operator_string, integer_two)
-end
+#User interface: Ask for user input (a calculation to perform). Method will give the user the result of the calculation.
+#Updated program to allow user to do as may calculations as they want. When the user types 'done' the program exits.
 
-#Ask for user input
-def calculate_many_user_inputs
-  answers = []
-  all_input = []
-  puts "What calculation would you like to perform? Type done when finished."
-  input = gets.chomp
-  counter = 0
-  until input == "done"
-     all_input << input
-    puts calculate_user_input(input)
-     answers << calculate_user_input(input)
+all = {}
+  loop do
+    puts "What calculation would you like to perform?"
     input = gets.chomp
-    counter +=1
+    if input == "done"
+      break
+    end
+  input_array = input.split(" ")
+  all[input] = calculate(input_array[0].to_i, input_array[1], input_array[2].to_i)
   end
-  puts counter.to_s + " calculations performed:"
-  idx = 0
-  until idx == all_input.length
-    puts all_input[idx].to_s + "=" + answers[idx].to_s
-    idx +=1
+
+#When the user is finished entering calculations but before program exits, a count of the calculations performed and a history of all of the calculations is printed using data stored in a hash.
+puts "#{all.length} operations have been performed:"
+  all.each do |key, value|
+    puts "#{key} = #{value}"
   end
-end
-calculate_many_user_inputs
+
+
+
+
 
 
 
