@@ -40,6 +40,6 @@ end
 
 it "can change tutu color" do
   dancer.tutu = "purple"
-  expect(dancer.change_tutu). to eq "purple"
+  expect(dancer.change_tutu). to eq "My tutu is purple"
 end
 end

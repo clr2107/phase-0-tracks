@@ -1,5 +1,6 @@
 class Dancer
   attr_accessor :age, :tutu
+  attr_reader :name, :card
 
   def initialize(name, age)
     @name = name
@@ -8,38 +9,25 @@ class Dancer
     @tutu = "pink"
   end
 
-  def tutu
-    @tutu
-  end
-
-  def name()
-    @name
-  end
-
-  def pirouette()
+  def pirouette
     "*twirls*"
   end
 
-  def bow()
+  def bow
     "*bows*"
-  end
-
-  def card
-    @card
   end
 
   def queue_dance_with(new_person)
     @card.push(new_person)
   end
 
-  def begin_next_dance()
-    next_person = @card.shift
-  "Now dancing with #{next_person}."
+  def begin_next_dance
+  "Now dancing with #{@card.shift}."
   end
 
   def change_tutu
-    "purple"
+    "My tutu is purple"
   end
 end
 
-#I added a change tutu color feature. I made the attribute readable and writable and then changed the color from pink to purple.
+#I added a change tutu color feature. I made the attribute readable and writable using attr_accessor and then changed the color from pink to purple.
