@@ -1,4 +1,4 @@
-class wordGame
+class WordGame
 
 attr_reader :game_over, :counter
 
@@ -21,7 +21,7 @@ def guess(word, letter_guess)
       user_guess[index] = letter_guess
       puts "You guessed a correct letter!"
       puts "Your current guess is " + user_guess.join("")
-      counter += 1
+      @counter+= 1
     end
   end
     if !word.include?(letter_guess)
@@ -35,16 +35,28 @@ end
 
 # DRIVER CODE
 puts "Welcome to the Word Game!"
-game = wordGame.new
+game = WordGame.new
 
 puts "User 1 enters a word."
 word = gets.chomp
 
-while game_over
+while !game.game_over
 puts "What letter would you like to guess?"
 letter_guess = gets.chomp.to_s
 game.guess(word, letter_guess)
 end
+
+
+# if counter == (word.length*2)
+#   game_over = true
+#   puts "You are out of guesses. Game over!"
+# end
+# correct_letter = true
+# if correct_answer
+#   puts "You guessed the word! YOU WON!!!"
+# end
+
+
 
 
 # if counter == (word.length*2)
