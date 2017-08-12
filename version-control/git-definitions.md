@@ -1,10 +1,10 @@
 # Git Definitions
-By: catherine rice
+By: Catherine Rice
 
 **Instructions: ** Define each of the following Git concepts.
 
 * What is version control?  Why is it useful?
-Version control allows multiple people to work on the same project simultaneoulsy and allows you to keep track of changes made to files.
+Version control allows multiple people to work on the same project simultaneously and allows you to keep track of changes made to files.
 * What is a branch and why would you use one?
 A branch is an offshoot of the main project which you can download onto one computer and make changes to, without effecting the master branch (or the main part of the code).
 * What is a commit? What makes a good commit message?
