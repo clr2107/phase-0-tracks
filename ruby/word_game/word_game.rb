@@ -1,45 +1,117 @@
-#Word Game.
-word = "cat"
-user_guess = []
-word.length.times {|x| user_guess << "_"}
-game_over = false
-counter = 0
-correct_letter = false
-word_array = word.split("")
-until word == user_guess
-  puts "What letter would you like to guess?"
-  letter_guess = gets.chomp
-  idx = 0
-        #word_array.each do |letter_word|
-        # if letter_word == letter_guess
-        #   letter_index = word.index(letter_word)
-        #   user_guess[letter_index] = letter_word
-        if word.include?(letter_guess)
-          correct_letter = true
-          index = word.index(letter_guess)
-          user_guess[index].replace(letter_guess)
-          puts "You guessed a correct letter!"
-        else
-          correct_letter = false
-          puts "You guessed an incorrect letter! Try again!"
-        end
-  idx +=1
+class wordGame
+
+attr_reader :game_over, :counter
+
+def initialize
+  @game_over = false
+  @counter = 0
 end
 
-counter +=1
-puts "Your current guess is " + user_guess
-if counter == (word.length*2)
-  game_over = true
-  puts "You are out of guesses. Game over!"
+#Method to get user input (letter), check if letter is correct/incorrect, and print the current word.
+def guess(word, letter_guess)
+  word_array = word.split("")
+  user_guess = []
+  word.length.times do |x|
+    user_guess << " _ "
+  end
+  word_array.each do |letter_word|
+    if letter_word == letter_guess
+      correct_letter = true
+      index = word.index(letter_guess)
+      user_guess[index] = letter_guess
+      puts "You guessed a correct letter!"
+      puts "Your current guess is " + user_guess.join("")
+      counter += 1
+    end
+  end
+    if !word.include?(letter_guess)
+      correct_letter = false
+      puts "You guessed an incorrect letter! Try again!"
+      puts "Your current guess is " + user_guess.join("")
+      counter +=1
+    end
+  end
 end
-correct_letter = true
-if correct_answer
-  puts "You guessed the word! YOU WON!!!"
+
+# DRIVER CODE
+puts "Welcome to the Word Game!"
+game = wordGame.new
+
+puts "User 1 enters a word."
+word = gets.chomp
+
+while game_over
+puts "What letter would you like to guess?"
+letter_guess = gets.chomp.to_s
+game.guess(word, letter_guess)
 end
 
 
+# if counter == (word.length*2)
+#   game_over = true
+#   puts "You are out of guesses. Game over!"
+# end
+# correct_letter = true
+# if correct_answer
+#   puts "You guessed the word! YOU WON!!!"
+# end
 
-# game class
+
+
+
+
+
+
+# #Word Game.
+# word = "cat"
+# #User guess is empty array.
+# user_guess = []
+# word.length.times do |x|
+#   user_guess << "_"
+# end
+# #
+# game_over = false
+# counter = 0
+# #Make word an array.
+# word_array = word.split("")
+# until word == user_guess
+#   puts "What letter would you like to guess?"
+#   letter_guess = gets.chomp
+#   #idx = 0
+#         #word_array.each do |letter_word|
+#         # if letter_word == letter_guess
+#         #   letter_index = word.index(letter_word)
+#         #   user_guess[letter_index] = letter_word
+#         #each with index
+#           word_array.each_with_index do |letter_word, index|
+#           if letter_word == letter_guess
+#           correct_letter = true
+#           index = word.index(letter_guess)
+#           user_guess[index] = letter_guess
+#           puts "You guessed a correct letter!"
+#           puts "Your current guess is " + user_guess
+#         else
+#           correct_letter = false
+#           puts "You guessed an incorrect letter! Try again!"
+#           puts "Your current guess is " + user_guess.join("")
+#         end
+#   idx +=1
+# end
+
+# counter +=1
+
+# if counter == (word.length*2)
+#   game_over = true
+#   puts "You are out of guesses. Game over!"
+# end
+# correct_letter = true
+# if correct_answer
+#   puts "You guessed the word! YOU WON!!!"
+# end
+
+# end
+
+
 # class Wordgame
 # end
 
