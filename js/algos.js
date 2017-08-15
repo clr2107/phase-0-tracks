@@ -31,9 +31,16 @@ shareKeyValuePair(object1 = {animal: "cat", sound: "meow"}, object2 = {animal: "
 //Integer = number of words in array
 //word_length = length of word
 function createArray(integer) {
-new_array = [];
-word_length = Math.random() * 10;
-Math.floor(word_length);
+  var times;
+  new_array = [];
+  for (times = 1; times<=integer; times++){
+      word_length = (Math.floor(Math.random() * 10));
+      alphabet = "abcdefghijklmnopqrstuvwxyz";
+      word = "";
+          for (var i = 0; i<= word_length; i++)
+          word += alphabet.charAt(Math.floor(Math.random()*20));
+          new_array.push(word);
+  }
+  console.log(new_array)
+  return new_array;
 }
-
-
