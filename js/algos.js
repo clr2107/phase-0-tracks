@@ -2,15 +2,22 @@
 //Use each loop to find the length of each element in the array.
 //Sort the lengths from shortest to longest.
 //Return the last element (longest) in the array.
+function sortNumber(a,b){
+    return a-b;
+  }
+
 function longestPhrase(arr) {
 for (var i = 0; i <= arr.length; i++){
-  arr.sort()
-  console.log(arr[arr.length -1])
+  arr.sort(sortNumber);
+  console.log(arr);
+  console.log(arr[0]);
+  return (arr[0]);
+}
+console.log(arr[arr.length -1])
 return (arr[arr.length -1])
 }
-}
-longestPhrase(['cat', 'elephant', 'dolphin']);
-longestPhrase(['giraffe', 'dog', 'bird'])
+
+longestPhrase(createArray(3))
 
 //Release 1: Write a function that takes two objects and checks to see if the objects share at least one key-value pair (return a boolean). Doesn't matter if a property is a string or identifier name.
 
