@@ -1,0 +1,48 @@
+1. Display the information in one table (either table is fine).
+sqlite> SELECT * FROM artists;
+1|Joni Mitchell|folk|1
+2|The Police|rock|3
+3|The Beatles|rock|4
+
+2. Update an item that meets some condition.
+sqlite> UPDATE artists SET genre="reggae rock" WHERE name="The Police";
+sqlite> SELECT * FROM artists;
+1|Joni Mitchell|folk|1
+2|The Police|reggae rock|3
+3|The Beatles|rock|4
+
+3. Display the information in both tables using one query.
+sqlite> SELECT * FROM artists, albums WHERE artists.name = albums.musician;
+1|Joni Mitchell|folk|1|1|Blue|Joni Mitchell
+2|The Police|reggae rock|3|2|Zenyatta Mondatta|The Police
+3|The Beatles|rock|4|3|Rubber Soul|The Beatles
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+sqlite> SELECT artists.genre, albums.name FROM artists JOIN albums ON artists.name=albums.musician;
+folk|Blue
+reggae rock|Zenyatta Mondatta
+rock|Rubber Soul
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+sqlite> DELETE FROM artists WHERE name="Joni Mitchell";
+sqlite> SELECT * FROM artists;
+2|The Police|reggae rock|3
+3|The Beatles|rock|4
+
+JOINS:
+sqlite> SELECT * FROM artists JOIN albums ON artists.name = albums.musician;
+1|Joni Mitchell|folk|1|1|Blue|Joni Mitchell
+2|The Police|reggae rock|3|2|Zenyatta Mondatta|The Police
+3|The Beatles|rock|4|3|Rubber Soul|The Beatles
+
+sqlite> SELECT artists.genre, albums.name FROM artists INNER JOIN albums ON artists.name = albums.musician;
+reggae rock|Zenyatta Mondatta
+rock|Rubber Soul
+
+Helpful diagram from https://www.w3schools.com/sql/sql_join.asp.
+Different kinds of JOINs:
+(Inner) Join: Return records that have matching values in both tables
+Left (outer) join: Return all records from the left table and the matched records from the right table
+Right (outer) join: Return all records from the right table, and the matched records from the left table
+Full (outer) join: Return all records when there is a match in either left or right table
+
