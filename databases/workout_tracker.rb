@@ -1,5 +1,3 @@
-
-
 #Create a workout tracker program which logs the user's workouts each day.
 #Create database which has data:
   #1. Kind of workout (e.g. running, biking, swimming)
@@ -24,32 +22,38 @@ SQL
 
 db.execute(create_table_cmd)
 
-db.execute("INSERT INTO workouts (date_complete, type, duration, notes) VALUES ('1-1-2017', 'swimming', 30, '25 laps')")
+#Tests
+# db.execute("INSERT INTO workouts (date_complete, type, duration, notes) VALUES ('1-1-2017', 'swimming', 30, '25 laps')")
 
-db.execute("INSERT INTO workouts (date_complete, type, duration, notes) VALUES ('1-2-2017', 'running', 30, 'knee injury')")
+# db.execute("INSERT INTO workouts (date_complete, type, duration, notes) VALUES ('1-2-2017', 'running', 30, 'knee injury')")
 
-db.execute("INSERT INTO workouts (date_complete, type, duration, notes) VALUES ('1-3-2017', 'biking', 40, 'no notes')")
-
-workouts = db.execute("SELECT * FROM workouts")
-workouts.each do |workout|
-  puts "#{workout['date_complete']}, #{workout['type']}, #{workout['duration']}, #{workout['notes']}"
-end
+# db.execute("INSERT INTO workouts (date_complete, type, duration, notes) VALUES ('1-3-2017', 'biking', 40, 'no notes')")
 
 #Get user input
-puts "Enter your workout data."
+puts "Welcome to your Workout Log! Use this log to track your daily workout."
+puts "Start entering your workout data here:"
 puts "Enter the date."
 date_complete = gets.chomp
 puts "Enter the type of workout."
 type = gets.chomp
-puts "Enter the duration of the workout."
+puts "Enter the duration of the workout (in minutes)."
 duration = gets.chomp
 puts "Enter any notes."
 notes = gets.chomp
 
 # #Add entry to database based on user input
 def add_entry(db, date_complete, type, duration, notes)
-  db.execute("INSERT INTO workouts (date_complete, type, duration, notes) VALUES ('#{date_complete}', '#{type}', #{duration}, '#{notes}')")
-  puts add_entry
+  db.execute("INSERT INTO workouts (date_complete, type, duration, notes) VALUES (?, ?, ?, ?)", [date_complete, type, duration, notes])
+end
+add_entry(db, date_complete, type, duration, notes)
+
+#Print all data
+puts
+puts "*All workouts*:"
+puts
+workouts = db.execute("SELECT * FROM workouts")
+workouts.each do |workout|
+  puts "Date: #{workout['date_complete']}, Workout type: #{workout['type']}, Duration (mins):#{workout['duration']}, Notes: #{workout['notes']}"
 end
 
 
