@@ -1,9 +1,11 @@
-#Create a workout tracker program which logs the user's workouts each day.
+#Create a daily workout log program which logs the user's workouts each day.
 #Create database which has data:
-  #1. Kind of workout (e.g. running, biking, swimming)
-  #2. Duration (minutes/hours)
-  #3. Any notes about the workout -- if it was good, bad etc.
-#Create ruby program which asks the user for input each day and prints all of the data at the end.
+  #1: Date of workout.
+  #2. Kind of workout (e.g. running, biking, swimming)
+  #3. Duration (minutes/hours)
+  #4. Any notes about the workout -- laps, mileage etc.
+#Create ruby program which asks for user input and prints all of the data at the end.
+#Additional challenges: 1) Allow user to sort data by date, workout type, etc. 2) Maybe print out data with a different UI.
 
 require 'sqlite3'
 
@@ -30,9 +32,10 @@ db.execute(create_table_cmd)
 # db.execute("INSERT INTO workouts (date_complete, type, duration, notes) VALUES ('1-3-2017', 'biking', 40, 'no notes')")
 
 #Get user input
-puts "Welcome to your Workout Log! Use this log to track your daily workout."
+puts "***Welcome to Workout Log App!***
+Use this log to track your daily workout."
 puts "Start entering your workout data here:"
-puts "Enter the date."
+puts "Enter the date of the workout."
 date_complete = gets.chomp
 puts "Enter the type of workout."
 type = gets.chomp
@@ -41,19 +44,20 @@ duration = gets.chomp
 puts "Enter any notes."
 notes = gets.chomp
 
-# #Add entry to database based on user input
+#Add entry to database based on user input.
 def add_entry(db, date_complete, type, duration, notes)
   db.execute("INSERT INTO workouts (date_complete, type, duration, notes) VALUES (?, ?, ?, ?)", [date_complete, type, duration, notes])
 end
 add_entry(db, date_complete, type, duration, notes)
 
-#Print all data
+#Print all data.
 puts
-puts "*All workouts*:"
+puts "***All Workouts***"
 puts
 workouts = db.execute("SELECT * FROM workouts")
 workouts.each do |workout|
-  puts "Date: #{workout['date_complete']}, Workout type: #{workout['type']}, Duration (mins):#{workout['duration']}, Notes: #{workout['notes']}"
+  puts "Date: #{workout['date_complete']}, Workout type: #{workout['type']}, Duration: #{workout['duration']} minutes, Notes: #{workout['notes']}"
+  puts
 end
 
 
