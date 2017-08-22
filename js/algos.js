@@ -1,26 +1,21 @@
-//Release 0: Write a function that takes an array of words or phrases and returns the longest word or phrase in the array.
-//Use each loop to find the length of each element in the array.
-//Sort the lengths from shortest to longest.
-//Return the last element (longest) in the array.
-function sortNumber(a,b){
-    return a-b;
-  }
+//Release 0 Instructions: Write a function that takes an array of words or phrases and returns the longest word or phrase in the array.
+//Pseudocode: Use each loop to find the length of each element in the array. Sort the lengths from shortest to longest. Return the last element (longest) in the array.
 
 function longestPhrase(arr) {
-for (var i = 0; i <= arr.length; i++){
-  arr.sort(sortNumber);
-  console.log(arr);
-  console.log(arr[0]);
-  return (arr[0]);
+var lgth = 0;
+var longest;
+for(var i=0; i < arr.length; i++){
+    if(arr[i].length > lgth){
+        lgth = arr[i].length;
+        longest = arr[i];
+    }
 }
-console.log(arr[arr.length -1])
-return (arr[arr.length -1])
+return longest;
 }
+longestPhrase(['cat', 'horse', 'banana'])
 
-longestPhrase(createArray(3))
-
-//Release 1: Write a function that takes two objects and checks to see if the objects share at least one key-value pair (return a boolean). Doesn't matter if a property is a string or identifier name.
-
+//Release 1 Instructions: Write a function that takes two objects and checks to see if the objects share at least one key-value pair (return a boolean). Doesn't matter if a property is a string or identifier name.
+//Pseudocode: Iterate through objects to see if they share one key-value pair. Return a boolean.
 function shareKeyValuePair (object1, object2){
 for (var i in object1)
 if ((Object.keys(object1)[0] == Object.keys(object2)[0]) &&
