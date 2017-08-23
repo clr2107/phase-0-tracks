@@ -14,7 +14,7 @@ for (var i=0; i < arr.length; i++){
 }
 return longest;
 }
-longestPhrase(['cat', 'horse', 'banana'])
+// longestPhrase(['cat', 'horse', 'banana'])
 
 //
 
@@ -29,18 +29,14 @@ for (var i in object1)
   }
   return false;
 }
-shareKeyValuePair(
-  object1 = {animal: "cat", sound: "meow"},
-  object2 = {animal: "dog", sound: "bark"})
+// shareKeyValuePair(
+//   object1 = {animal: "cat", sound: "meow"},
+//   object2 = {animal: "dog", sound: "bark"})
 
 //
 
 //Release 2 Instructions: Write a function that takes an integer for length, and builds and returns an array of strings of the given length.
-//(Argument of 3 returns 3 randomly generated strings of varying length, min of 1 letter and max of 10 letters.) Do 10 times: generates an array, prints the array,feeds array into longest word function, and prints result.
-//Create randomly generated number between 1 and 10
-//Integer = number of words in array
-//word_length = length of word
-
+//(Argument of 3 returns 3 randomly generated strings of varying length, min of 1 letter and max of 10 letters.)
 function createArray(integer) {
   var times;
   new_array = [];
@@ -53,6 +49,14 @@ function createArray(integer) {
           new_array.push(word);
   }
   console.log(new_array)
-  return longestPhrase(new_array)
+  return(new_array)
 }
-createArray(3)
+// createArray(3)
+
+//Driver Code
+//Does the following 10 times: generates an array, prints the array, feeds the array into the longest word function, and prints the result.
+
+var times = 10
+for (var i = 0; i <= 10; i++) {
+  console.log(longestPhrase(createArray(3)));
+}
