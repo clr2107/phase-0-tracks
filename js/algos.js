@@ -21,15 +21,17 @@ longestPhrase(['cat', 'horse', 'banana'])
 //Release 1 Instructions: Write a function that takes two objects and checks to see if the objects share at least one key-value pair (return a boolean).
 //Pseudocode: Iterate through objects to see if they share one key-value pair. Return a boolean.
 
-function shareKeyValuePair (object1, object2){
+function shareKeyValuePair (object1, object2) {
 for (var i in object1)
   if ((Object.keys(object1)[0] == Object.keys(object2)[0]) &&
-    object1[i] == object2[i])
+    object1[i] == object2[i]) {
     return true;
-  else
-    return false;
+  }
+  return false;
 }
-shareKeyValuePair(object1 = {animal: "cat", sound: "meow"}, object2 = {animal: "cat", sound: "meow"})
+shareKeyValuePair(
+  object1 = {animal: "cat", sound: "meow"},
+  object2 = {animal: "dog", sound: "bark"})
 
 //
 
