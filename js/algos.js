@@ -36,8 +36,7 @@ shareKeyValuePair(
 //
 
 //Release 2 Instructions: Write a function that takes an integer for length, and builds and returns an array of strings of the given length.
-//(Argument of 3 returns 3 randomly generated strings of varying length, min of 1 letter and max of 10 letters.)
-//Pseudocode: Do 10 times: generates an array, prints the array,feeds array into longest word function, and prints result.
+//(Argument of 3 returns 3 randomly generated strings of varying length, min of 1 letter and max of 10 letters.) Do 10 times: generates an array, prints the array,feeds array into longest word function, and prints result.
 //Create randomly generated number between 1 and 10
 //Integer = number of words in array
 //word_length = length of word
@@ -54,6 +53,6 @@ function createArray(integer) {
           new_array.push(word);
   }
   console.log(new_array)
-  return new_array;
+  return longestPhrase(new_array)
 }
 createArray(3)
