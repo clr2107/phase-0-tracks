@@ -21,18 +21,26 @@ return longest;
 //Release 1 Instructions: Write a function that takes two objects and checks to see if the objects share at least one key-value pair (return a boolean).
 //Pseudocode: Iterate through objects to see if they share one key-value pair. Return a boolean.
 
+//Assume that both objects have the same amount of key value pairs
+//start with first key value pair in object 1, compare to each key value pair in object 2, then move on to second key value pair in object 1 etc.
 function shareKeyValuePair (object1, object2) {
-for (var i in object1)
-  if ((Object.keys(object1)[0] == Object.keys(object2)[0]) &&
-    object1[i] == object2[i]) {
-    return true;
+  var number = length.length;
+  for (var key in object1) {
+    for (var key2 in object2) {
+      var keysMatch = (key === key2);
+      var valuesMatch = object1[key] === object2[key2];
+      if (keysMatch && valuesMatch) {
+        return true;
+      }
+    }
+
   }
   return false;
 }
-// shareKeyValuePair(
-//   object1 = {animal: "cat", sound: "meow"},
-//   object2 = {animal: "dog", sound: "bark"})
-
+shareKeyValuePair(
+  object1 = {gopher: "ble", cat: "meows", pigeon: "coo"},
+  object2 = {dog: "woof", cat: "hiss", crow: "caw"}
+  )
 //
 
 //Release 2 Instructions: Write a function that takes an integer for length, and builds and returns an array of strings of the given length.
