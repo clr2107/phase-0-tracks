@@ -31,9 +31,11 @@ get "/studentsByLocation" do
 end
 
 post '/form' do
-  "Hello world"
-    @studentsByLocation = db.execute("SELECT * FROM students WHERE campus = #{params['value']}")
-    # @studentsByLocation = db.execute("SELECT * FROM students")
+   campus = params['campus'].to_s
+    @studentsByLocation = db.execute("SELECT * FROM students WHERE campus=?", [campus])
+
+#Why doesn't this interpolation work?
+   # @studentsByLocation = db.execute("SELECT * FROM students WHERE campus = #{params['campus']}")
     erb :display
 
 end
