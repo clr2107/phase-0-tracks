@@ -24,4 +24,18 @@ post '/students' do
   redirect '/'
 end
 
+
+##
+get "/studentsByLocation" do
+    erb :studentsByLocation
+end
+
+post '/form' do
+  "Hello world"
+    @studentsByLocation = db.execute("SELECT * FROM students WHERE campus = #{params['value']}")
+    # @studentsByLocation = db.execute("SELECT * FROM students")
+    erb :display
+
+end
+
 # add static resources
